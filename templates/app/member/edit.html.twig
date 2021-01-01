@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editer membre{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-6">
+            <h1>Editer membre</h1>
+        </div>
+
+        <div class="col-6 text-right">
+            {{ include('app/member/_delete_form.html.twig') }}
+
+            <a href="{{ path('member_index') }}" class="btn btn-primary text-white my-1">Retour à la liste</a>
+
+
+        </div>
+    </div>
+
+    {{ include('app/member/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+
+{% endblock %}

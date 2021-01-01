@@ -1,0 +1,65 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-5">
+    <a class="navbar-brand" href="{{ path('home') }}">ProjetConcert</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExample04">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item {{ page is defined and page == "groupe" ? "active" : "" }}">
+                <a class="nav-link" href="{{ path("band_index") }}">Groupes</a>
+            </li>
+{#            <li class="nav-item  {{ page is defined and page == "concert" ? "active" : "" }}">#}
+{#                <a class="nav-link" href="{{ path("concert_index") }}">Concerts</a>#}
+{#            </li>#}
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Concerts
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{{ path("concert_index", {'year': '2018'}) }}">2018</a>
+                    <a class="dropdown-item" href="{{ path("concert_index", {'year': '2019'}) }}">2019</a>
+                    <a class="dropdown-item" href="{{ path("concert_index", {'year': '2020'}) }}">2020</a>
+                </div>
+            </li>
+
+
+            <li class="nav-item {{ page is defined and page == "member" ? "active" : "" }}">
+                <a class="nav-link" href="{{ path("member_index") }}">Musiciens</a>
+            </li>
+
+            {% if is_granted('ROLE_ADMIN') %}
+                <li class="nav-item {{ page is defined and page == "user" ? "active" : "" }}">
+                    <a class="nav-link" href="{{ path("user_index") }}">Utilisateurs</a>
+                </li>
+            {% endif %}
+
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path("user_show", {'id': app.user.id}) }}">Mon compte</a>
+                </li>
+            {% endif %}
+
+
+        </ul>
+        <ul class="my-2 my-md-0 navbar-nav">
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                <li class="nav-item">
+                    <span class="navbar-text text-white">Bonjour {{ app.user.firstName }}</span>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path("app_logout") }}"><span class="material-icons">exit_to_app</span> Déconnexion</a>
+                </li>
+            {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('app_register') }}"><span class="material-icons">perm_identity</span> Inscription</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path("app_login") }}"><span class="material-icons">login</span> Connexion</a>
+                </li>
+
+            {% endif %}
+        </ul>
+    </div>
+</nav>

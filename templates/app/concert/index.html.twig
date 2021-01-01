@@ -1,0 +1,89 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste concerts{% endblock %}
+
+{% block body %}
+
+    <div class="row">
+        <div class="col-6">
+            <h1>Liste concerts</h1>
+
+
+        </div>
+
+        <div class="col-6 text-right">
+            {% if is_granted('ROLE_ADMIN') %}
+                <a href="{{ path('concert_new') }}" class="btn btn-primary text-white">Créer</a>
+            {% endif %}
+
+        </div>
+    </div>
+
+
+
+
+
+    <div class="row">
+
+
+        {% for concert in concerts %}
+
+            <a class="col-md-4 text-black-50 mb-3" href="{{ path("concert_show", {'id': concert.id}) }}">
+                <div class="card h-100">
+                    <img class="card-img-top" src="{{ asset(concert.band.picturePath) }}" alt="Image groupe">
+                    <div class="card-body">
+                        <h3 class="card-title text-uppercase">{{ concert.tourName }}</h3>
+                        <h4 class="card-title">Le {{ concert.date | date('d/m/Y') }}</h4>
+
+                        <p class="card-text btn btn-secondary btn-block">{{ concert.hall.name }}</p>
+                    </div>
+                    <div class="card-footer text-uppercase text-center">
+                        En savoir plus
+                    </div>
+                </div>
+            </a>
+
+
+        {% else %}
+
+            <div class="card col-12">
+                <div class="card-body">
+                    Pas de concert prévu.
+                </div>
+            </div>
+
+        {% endfor %}
+    </div>
+
+{#    <table class="table">#}
+{#        <thead>#}
+{#        <tr>#}
+{#            <th>Id</th>#}
+{#            <th>Date</th>#}
+{#            <th>Tournée</th>#}
+{#            <th>Actions</th>#}
+{#        </tr>#}
+{#        </thead>#}
+{#        <tbody>#}
+{#        {% for concert in concerts %}#}
+{#            <tr>#}
+{#                <td>{{ concert.id }}</td>#}
+{#                <td>{{ concert.date ? concert.date|date('Y-m-d') : '' }}</td>#}
+{#                <td>{{ concert.tourName }}</td>#}
+{#                <td>#}
+{#                    <a href="{{ path('concert_show', {'id': concert.id}) }}">Voir</a>#}
+{#                    {% if is_granted('ROLE_ADMIN') %}#}
+{#                        <a href="{{ path('concert_edit', {'id': concert.id}) }}">Editer</a>#}
+{#                    {% endif %}#}
+
+{#                </td>#}
+{#            </tr>#}
+{#        {% else %}#}
+{#            <tr>#}
+{#                <td colspan="4">Pas d'informations trouvé</td>#}
+{#            </tr>#}
+{#        {% endfor %}#}
+{#        </tbody>#}
+{#    </table>#}
+
+{% endblock %}

@@ -1,0 +1,10 @@
+@import "_variables.scss";
+
+$card-justify-content: auto;
+
+.card-body {
+  text-justify: $card-justify-content;
+}
+
+@import "~bootstrap/scss/card";
+

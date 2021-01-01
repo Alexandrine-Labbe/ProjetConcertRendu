@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+
+    <div class="row ">
+
+
+        {% for concert in future_concert %}
+
+            <a class="col-md-4 my-3 text-black-50 " href="{{ path("concert_show", {'id': concert.id}) }}">
+                <div class="card h-100">
+                    <img class="card-img-top" src="{{ asset(concert.band.picturePath) }}" alt="Image groupe">
+                    <div class="card-body">
+                        <h3 class="card-title text-uppercase">{{ concert.tourName }}</h3>
+                        <h4 class="card-title">Le {{ concert.date | date('d/m/Y') }}</h4>
+                        <p class="card-text">
+                            Le groupe {{ concert.band.name }} en concert le {{ concert.date | date('d/m/Y') }}.
+                            <br>Réservez vos places maintenant, il n'y en a que {{ concert.hall.capacity }} disponibles !
+                        </p>
+                        <p class="card-text btn btn-secondary btn-block">{{ concert.hall.name }}</p>
+                    </div>
+                    <div class="card-footer text-uppercase text-center">
+                        En savoir plus
+                    </div>
+                </div>
+            </a>
+
+
+        {% else %}
+
+            <div class="card">
+                <div class="card-body">
+                    Pas de concert prévu.
+                </div>
+            </div>
+
+        {% endfor %}
+    </div>
+    {{ knp_pagination_render(future_concert) }}
+
+{% endblock %}
