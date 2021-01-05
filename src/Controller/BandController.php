@@ -6,11 +6,9 @@ use App\Entity\Band;
 use App\Form\BandType;
 use App\Repository\BandRepository;
 use App\Service\FileUploader;
+use Doctrine\ORM\NonUniqueResultException;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\File\Exception\FileException;
-use Symfony\Component\HttpFoundation\File\File;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -71,9 +69,15 @@ class BandController extends AbstractController
 
     /**
      * @Route("/{id}", name="band_show", methods={"GET"})
+     * @param $id
+     * @param BandRepository $bandRepository
+     * @return Response
+     * @throws NonUniqueResultException
      */
-    public function show(Band $band): Response
+    public function show($id, BandRepository $bandRepository): Response
     {
+        $band = $bandRepository->findOneWithFutureShowsOnly($id);
+
         return $this->render('app/band/show.html.twig', [
             'band' => $band,
         ]);

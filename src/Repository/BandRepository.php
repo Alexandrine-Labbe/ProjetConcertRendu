@@ -3,7 +3,9 @@
 namespace App\Repository;
 
 use App\Entity\Band;
+use DateTime;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\NonUniqueResultException;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -36,15 +38,23 @@ class BandRepository extends ServiceEntityRepository
     }
     */
 
-    /*
-    public function findOneBySomeField($value): ?Band
+
+    /**
+     * @param $id
+     * @return Band|null
+     * @throws NonUniqueResultException
+     */
+    public function findOneWithFutureShowsOnly($id): ?Band
     {
-        return $this->createQueryBuilder('b')
-            ->andWhere('b.exampleField = :val')
-            ->setParameter('val', $value)
+        return $this->createQueryBuilder('band')
+            ->join('band.shows', 'concert')
+            ->Where('band.id = :id')
+            ->andWhere('concert.date > :now')
+            ->setParameter('id', $id)
+            ->setParameter('now', new DateTime())
             ->getQuery()
             ->getOneOrNullResult()
         ;
     }
-    */
+
 }
