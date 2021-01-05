@@ -1,20 +1,20 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Groupe{% endblock %}
+{% block title %}{% trans %}Groupe{% endtrans %}{% endblock %}
 
 {% block body %}
 
 
     <div class="row">
         <div class="col-6">
-            <h3>Le groupe {{ band.name }}</h3>
+            <h3>{% trans %}Le groupe{% endtrans %} {{ band.name }}</h3>
         </div>
 
         <div class="col-6 text-right">
-            <a href="{{ path('band_index') }}" class="btn btn-primary text-white my-1">Retour à la liste</a>
+            <a href="{{ path('band_index') }}" class="btn btn-primary text-white my-1">{% trans %}Retour à la liste{% endtrans %}</a>
 
             {% if is_granted('ROLE_ADMIN') %}
-                <a href="{{ path('band_edit', {'id': band.id}) }}" class="btn btn-primary text-white my-1">Editer</a>
+                <a href="{{ path('band_edit', {'id': band.id}) }}" class="btn btn-primary text-white my-1">{% trans %}Editer{% endtrans %}</a>
                 {{ include('app/band/_delete_form.html.twig') }}
             {% endif %}
         </div>
@@ -22,17 +22,17 @@
 
     <img src="{{ asset(band.picturePath) }}" alt="logo groupe" class="img-thumbnail w-25 mx-auto d-block">
 
-    <h5>Le groupe est composé de {{ band.members | length }} membres qui sont :</h5>
+    <h5>{% trans with {'%membersLength%':  band.members | length } %}Le groupe est composé de { membersLength } membres qui sont :{% endtrans %}</h5>
 
     <div class="row">
 
         {% for member in band.members %}
             <div class="col-sm-3 mb-3">
-                <div class="card">
+                <div class="card h-100">
                     <img src="{{ asset(member.picturePath) }}" class="card-img-top" alt="Photo membre">
                     <div class="card-body">
                         <h5 class="card-title"><a href="{{ path('member_show', {'id': member.id}) }}"> {{ member.name }} {{ member.firstName }}</a></h5>
-                        <p class="card-text">Né le {{ member.birthDate |date('d-m-Y') }}</p>
+                        <p class="card-text">{% trans %}Né le{% endtrans %} {{ member.birthDate |date('d-m-Y') }}</p>
                     </div>
                     <div class="card-footer">
                         {{ member.job }}
@@ -42,14 +42,14 @@
         {% else %}
             <div class="card">
                 <div class="card-body">
-                    <p class="card-text">Aucun membre pour l'instant.</p>
+                    <p class="card-text">{% trans %}Aucun membre pour l'instant.{% endtrans %}</p>
                 </div>
             </div>
 
         {% endfor %}
     </div>
 
-    <h5>Les prochains concerts à venir : </h5>
+    <h5>{% trans %}Les prochains concerts à venir : {% endtrans %}</h5>
 
     <div class="row">
 
@@ -62,20 +62,22 @@
                         <div class="card-body">
                             <h3 class="card-title text-uppercase">{{ concert.tourName }}</h3>
                             <h4 class="card-title">Le {{ concert.date | date('d/m/Y') }}</h4>
-                            <p class="card-text">
-                                Le groupe {{ concert.band.name }} en concert le {{ concert.date | date('d/m/Y') }}.
-                                <br>Réservez vos places maintenant, il n'y en a que {{ concert.hall.capacity }} disponibles !
+                            <p>
+                                {% trans %}Le groupe{% endtrans %} <a href="{{ path('band_show', {'id': concert.band.id}) }}" class="text-primary">{{ concert.band.name }}</a>
+                                {% trans with {'%date%': concert.date | date('d/m/Y')} %}
+                                en concert le { date }{% endtrans %}.
+                                <br>{% trans with {'%capacity%': concert.hall.capacity} %}Réservez vos places maintenant, il n'y en a que { capacity } disponibles{% endtrans %} !
                             </p>
                             <p class="card-text btn btn-secondary btn-block">{{ concert.hall.name }}</p>
                         </div>
-                        <div class="card-body text-uppercase text-center">En savoir plus</div>
+                        <div class="card-body text-uppercase text-center">{% trans %}En savoir plus{% endtrans %}</div>
                     </div>
                 </a>
             </div>
         {% else %}
             <div class="card col-12">
                 <div class="card-body">
-                    <p class="card-text">Aucun concert pour l'instant.</p>
+                    <p class="card-text">{% trans %}Aucun concert pour l'instant.{% endtrans %}</p>
                 </div>
             </div>
 

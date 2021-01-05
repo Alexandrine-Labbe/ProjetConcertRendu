@@ -13,6 +13,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
  * @Route("/user")
@@ -56,9 +57,10 @@ class UserController extends AbstractController
      * @param User $user
      * @param UserPasswordEncoderInterface $passwordEncoder
      * @param Session $session
+     * @param TranslatorInterface $translator
      * @return Response
      */
-    public function edit(Request $request, User $user, UserPasswordEncoderInterface $passwordEncoder, Session $session): Response
+    public function edit(Request $request, User $user, UserPasswordEncoderInterface $passwordEncoder, Session $session, TranslatorInterface  $translator): Response
     {
         if ($user->getId() != $this->getUser()->getId()) {
             $this->denyAccessUnlessGranted('ROLE_ADMIN');
@@ -80,7 +82,7 @@ class UserController extends AbstractController
                     $user->setPassword($new_pwd_encoded);
 
                 } else {
-                    $session->getFlashBag()->add('error', 'Mot de passe non valide.');
+                    $session->getFlashBag()->add('error', $translator->trans('Mot de passe non valide.'));
 
                     return $this->redirectToRoute("user_edit", ["id" => $user->getId()]);
                 }

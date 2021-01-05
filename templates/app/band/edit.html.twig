@@ -1,24 +1,24 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Editer le groupe{% endblock %}
+{% block title %}{% trans %}Editer le groupe{% endtrans %}{% endblock %}
 
 {% block body %}
     <div class="row">
         <div class="col-6">
 
-            <h1>Editer le groupe</h1>
+            <h1>{% trans %}Editer le groupe{% endtrans %}</h1>
 
         </div>
 
         <div class="col-6 text-right">
             {{ include('app/band/_delete_form.html.twig') }}
 
-            <a href="{{ path('band_index') }}" class="btn btn-primary text-white my-1">Retour à la liste</a>
+            <a href="{{ path('band_index') }}" class="btn btn-primary text-white my-1">{% trans %}Retour à la liste{% endtrans %}</a>
 
         </div>
     </div>
 
 
-    {{ include('app/band/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+    {{ include('app/band/_form.html.twig', {'button_label': 'Mettre à jour' | trans } ) }}
 
 {% endblock %}

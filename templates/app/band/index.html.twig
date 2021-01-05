@@ -1,18 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Liste des groupes{% endblock %}
+{% block title %}{% trans %}Liste des groupes{% endtrans %}{% endblock %}
 
 {% block body %}
 
     <div class="row">
         <div class="col-6">
-            <h1>Liste des groupes</h1>
+            <h1>{% trans %}Liste des groupes{% endtrans %}</h1>
 
         </div>
 
         <div class="col-6 text-right">
             {% if is_granted('ROLE_ADMIN') %}
-                <a href="{{ path('band_new') }}" class="btn btn-primary text-white">Créer</a>
+                <a href="{{ path('band_new') }}" class="btn btn-primary text-white">{% trans %}Créer{% endtrans %}</a>
             {% endif %}
         </div>
     </div>
@@ -28,16 +28,17 @@
                     <img class="card-img-top" src="{{ asset(band.picturePath) }}" alt="Image groupe">
                     <div class="card-body">
                         <h3 class="card-title text-uppercase">{{ band.name }}</h3>
-                        <h4 class="card-title">Style : {{ band.style }}</h4>
+                        <h4 class="card-title">{% trans %}Style{% endtrans %} : {{ band.style }}</h4>
                         <p class="card-text">
-                            Le groupe {{ band.name }} créé en {{ band.yearOfCreation }} est composé de {{ band.members |length }} membres.
+                            {% trans with {'%name%': band.name, '%yearOfCreation%': band.yearOfCreation, '%members%': band.members |length} %}
+                            Le groupe { name } créé en { yearOfCreation } est composé de { members } membres{% endtrans %}.
                             {% if band.lastAlbumName %}
-                                <br>Son dernier album est {{ band.lastAlbumName }}.
+                                <br> {% trans with {'%lastAlbumName%': band.lastAlbumName} %}Son dernier album est { lastAlbumName }{% endtrans %}.
                             {% endif %}
                         </p>
                     </div>
                     <div class="card-footer text-uppercase text-center">
-                        En savoir plus
+                        {% trans %}En savoir plus{% endtrans %}
                     </div>
                 </div>
             </a>
@@ -47,7 +48,7 @@
 
             <div class="card col-12">
                 <div class="card-body">
-                    Pas de groupes existants.
+                    {% trans %}Pas de groupes existants.{% endtrans %}
                 </div>
             </div>
 

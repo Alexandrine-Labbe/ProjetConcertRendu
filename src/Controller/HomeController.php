@@ -8,6 +8,7 @@ use App\Repository\ConcertRepository;
 use DateTime;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -21,7 +22,7 @@ class HomeController extends AbstractController
      * @param PaginatorInterface $paginator
      * @return Response
      */
-    public function list($page, ConcertRepository $concertRepository, PaginatorInterface $paginator): Response
+    public function list($page, ConcertRepository $concertRepository, PaginatorInterface $paginator, Request $request): Response
     {
         $futureConcert = $concertRepository->findByAfterDate(new DateTime());
 
@@ -30,6 +31,7 @@ class HomeController extends AbstractController
             $page,
             9
         );
+        dump($request->getSession()->get('_locale', ""));
 
         return $this->render('app/portail.html.twig', [
             'page' => 'Home',

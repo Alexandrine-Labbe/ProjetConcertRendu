@@ -6,6 +6,7 @@ use App\Repository\BandRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\OrderBy;
 
 /**
  * @ORM\Entity(repositoryClass=BandRepository::class)
@@ -40,7 +41,8 @@ class Band
     private $lastAlbumName;
 
     /**
-     * @ORM\OneToMany(targetEntity=Concert::class, mappedBy="band")
+     * @ORM\OneToMany(targetEntity=Concert::class, mappedBy="band", fetch="EAGER")
+     * @OrderBy({"date" = "DESC"})
      */
     private $shows;
 

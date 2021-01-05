@@ -1,18 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Utilisateur{% endblock %}
+{% block title %}{% trans %}Utilisateur{% endtrans %}{% endblock %}
 
 {% block body %}
     <div class="row">
         <div class="col-6">
-            <h1>Utilisateur</h1>
+            <h1>{% trans %}Utilisateur{% endtrans %}</h1>
 
         </div>
         <div class="col-6 text-right">
 
-            <a href="{{ path('user_index') }}" class="btn btn-primary text-white">Retourner à la liste</a>
+            <a href="{{ path('user_index') }}" class="btn btn-primary text-white">{% trans %}Retourner à la liste{% endtrans %}</a>
             {{ include('app/user/_delete_form.html.twig') }}
-            <a href="{{ path('user_edit', {'id': user.id}) }}" class="btn btn-primary text-white mb-3">Editer</a>
+            <a href="{{ path('user_edit', {'id': user.id}) }}" class="btn btn-primary text-white mb-3">{% trans %}Editer{% endtrans %}</a>
 
 
         </div>
@@ -23,23 +23,23 @@
     <table class="table table-striped ">
         <tbody>
         <tr>
-            <th>Id</th>
+            <th>{% trans %}Id{% endtrans %}</th>
             <td>{{ user.id }}</td>
         </tr>
         <tr>
-            <th>Email</th>
+            <th>{% trans %}Email{% endtrans %}</th>
             <td>{{ user.email }}</td>
         </tr>
         <tr>
-            <th>Roles</th>
+            <th>{% trans %}Roles{% endtrans %}</th>
             <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
         </tr>
         <tr>
-            <th>Prénom</th>
+            <th>{% trans %}Prénom{% endtrans %}</th>
             <td>{{ user.FirstName }}</td>
         </tr>
         <tr>
-            <th>Nom</th>
+            <th>{% trans %}Nom{% endtrans %}</th>
             <td>{{ user.LastName }}</td>
         </tr>
         </tbody>

@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Créer un groupe{% endblock %}
+{% block title %}{% trans %}Créer un groupe{% endtrans %}{% endblock %}
 
 {% block body %}
-    <h1>Créer un groupe</h1>
+    <h1>{% trans %}Créer un groupe{% endtrans %}</h1>
 
     {{ include('app/band/_form.html.twig') }}
 
-    <a href="{{ path('band_index') }}">Retour à la liste</a>
+    <a href="{{ path('band_index') }}">{% trans %}Retour à la liste{% endtrans %}</a>
 {% endblock %}

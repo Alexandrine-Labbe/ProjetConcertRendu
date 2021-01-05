@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Connexion !{% endblock %}
+{% block title %}{% trans %}Connexion{% endtrans %} !{% endblock %}
 
 {% block body %}
 <form method="post">
@@ -10,15 +10,15 @@
 
     {% if app.user %}
         <div class="mb-3">
-            Vous êtes connecté en tant que {{ app.user.username }}, <a href="{{ path('app_logout') }}">Déconnexion</a>
+            {% trans with {'%username%': app.user.username } %}Vous êtes connecté en tant que { username }{% endtrans %}, <a href="{{ path('app_logout') }}">{% trans %}Déconnexion{% endtrans %}</a>
         </div>
     {% endif %}
 
-    <h1 class="h3 mb-3 font-weight-normal">Connectez vous</h1>
-    <label for="inputEmail">Email</label>
+    <h1 class="h3 mb-3 font-weight-normal">{% trans %}Connectez vous{% endtrans %}</h1>
+    <label for="inputEmail">{% trans %}Email{% endtrans %}</label>
     <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
 
-    <label for="inputPassword">Mot de passe</label>
+    <label for="inputPassword">{% trans %}Mot de passe{% endtrans %}</label>
     <input type="password" name="password" id="inputPassword" class="form-control" required>
 
     <input type="hidden" name="_csrf_token"
@@ -37,7 +37,7 @@
     #}
 
     <button class="btn btn-lg btn-primary text-white d-block mx-auto my-3" type="submit">
-        Connexion
+        {% trans %}Connexion{% endtrans %}
     </button>
 </form>
 {% endblock %}

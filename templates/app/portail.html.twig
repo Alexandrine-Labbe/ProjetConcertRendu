@@ -15,14 +15,14 @@
                     <div class="card-body">
                         <h3 class="card-title text-uppercase">{{ concert.tourName }}</h3>
                         <h4 class="card-title">Le {{ concert.date | date('d/m/Y') }}</h4>
-                        <p class="card-text">
-                            Le groupe {{ concert.band.name }} en concert le {{ concert.date | date('d/m/Y') }}.
-                            <br>Réservez vos places maintenant, il n'y en a que {{ concert.hall.capacity }} disponibles !
+                        <p class="card-text">{% trans with {'%name%': concert.band.name, 'date': concert.date | date('d/m/Y') } %}
+                            Le groupe { name } en concert le { date }.{% endtrans %}
+                            <br>{% trans with {'%hallCapacity%': concert.hall.capacity } %}Réservez vos places maintenant, il n'y en a que { hallCapacity } disponibles !{% endtrans %}
                         </p>
                         <p class="card-text btn btn-secondary btn-block">{{ concert.hall.name }}</p>
                     </div>
                     <div class="card-footer text-uppercase text-center">
-                        En savoir plus
+                        {% trans %}En savoir plus{% endtrans %}
                     </div>
                 </div>
             </a>
@@ -32,7 +32,7 @@
 
             <div class="card">
                 <div class="card-body">
-                    Pas de concert prévu.
+                    {% trans %}Pas de concert prévu.{% endtrans %}
                 </div>
             </div>
 

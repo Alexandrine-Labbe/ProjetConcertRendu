@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Concert{% endblock %}
+{% block title %}{% trans %}Concert{% endtrans %}{% endblock %}
 
 {% block body %}
 
@@ -10,11 +10,11 @@
         </div>
 
         <div class="col-6 text-right">
-            <a href="{{ path('concert_index') }}" class="btn btn-primary text-white">Retour à la liste</a>
+            <a href="{{ path('concert_index') }}" class="btn btn-primary text-white">{% trans %}Retour à la liste{% endtrans %}</a>
 
 
             {% if is_granted('ROLE_ADMIN') %}
-                <a href="{{ path('concert_edit', {'id': concert.id}) }}" class="btn btn-primary text-white">Editer</a>
+                <a href="{{ path('concert_edit', {'id': concert.id}) }}" class="btn btn-primary text-white">{% trans %}Editer{% endtrans %}</a>
                 {{ include('app/concert/_delete_form.html.twig') }}
             {% endif %}
         </div>
@@ -26,16 +26,18 @@
         <div class="col-12 col-md-6">
             <h3>{{ concert.date ? concert.date|date('Y-m-d') : '' }}</h3>
             <p>
-                Le groupe <a href="{{ path('band_show', {'id': concert.band.id}) }}" class="text-primary">{{ concert.band.name }}</a> en concert le {{ concert.date | date('d/m/Y') }}.
-                <br>Réservez vos places maintenant, il n'y en a que {{ concert.hall.capacity }} disponibles !
+                {% trans %}Le groupe{% endtrans %} <a href="{{ path('band_show', {'id': concert.band.id}) }}" class="text-primary">{{ concert.band.name }}</a>
+                {% trans with {'%date%': concert.date | date('d/m/Y')} %}
+                en concert le { date }{% endtrans %}.
+                <br>{% trans with {'%capacity%': concert.hall.capacity} %}Réservez vos places maintenant, il n'y en a que { capacity } disponibles{% endtrans %} !
             </p>
 
-            <h4>Infos pratiques</h4>
+            <h4>{% trans %}Infos pratiques{% endtrans %}</h4>
 
-            <p>Salle de concert : {{ concert.hall.name }}</p>
-            <p>Hall : {{ concert.hall.concertHall.name }}</p>
-            <p>Présentation : {{ concert.hall.concertHall.presentation }}</p>
-            <p>Ville : {{ concert.hall.concertHall.city }}</p>
+            <p>{% trans %}Salle de concert{% endtrans %} : {{ concert.hall.name }}</p>
+            <p>{% trans %}Hall{% endtrans %} : {{ concert.hall.concertHall.name }}</p>
+            <p>{% trans %}Présentation{% endtrans %} : {{ concert.hall.concertHall.presentation }}</p>
+            <p>{% trans %}Ville{% endtrans %} : {{ concert.hall.concertHall.city }}</p>
             
         </div>
         <div class="col-12 col-md-6">

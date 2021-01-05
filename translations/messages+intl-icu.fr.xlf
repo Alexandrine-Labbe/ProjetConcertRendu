@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="0n02BmW" resname="Le groupe { name } en concert le { date }.">
+        <source>Le groupe { name } en concert le { date }.</source>
+        <target>Le groupe { name } en concert le { date }.</target>
+      </trans-unit>
+      <trans-unit id="Xs.mT7r" resname="Réservez vos places maintenant, il n'y en a que { hallCapacity } disponibles !">
+        <source>Réservez vos places maintenant, il n'y en a que { hallCapacity } disponibles !</source>
+        <target>Réservez vos places maintenant, il n'y en a que { hallCapacity } disponibles !</target>
+      </trans-unit>
+      <trans-unit id="3TrjMlD" resname="En savoir plus">
+        <source>En savoir plus</source>
+        <target>En savoir plus</target>
+      </trans-unit>
+      <trans-unit id="AspYSlo" resname="Pas de concert prévu.">
+        <source>Pas de concert prévu.</source>
+        <target>Pas de concert prévu.</target>
+      </trans-unit>
+      <trans-unit id="z7GsDIB" resname="Inscription">
+        <source>Inscription</source>
+        <target>Inscription</target>
+      </trans-unit>
+      <trans-unit id="4yW.j5A" resname="Prénom">
+        <source>Prénom</source>
+        <target>Prénom</target>
+      </trans-unit>
+      <trans-unit id="ssEkU20" resname="Nom">
+        <source>Nom</source>
+        <target>Nom</target>
+      </trans-unit>
+      <trans-unit id=".5yLjAZ" resname="Mot de passe">
+        <source>Mot de passe</source>
+        <target>Mot de passe</target>
+      </trans-unit>
+      <trans-unit id="PCX0_17" resname="S'inscrire">
+        <source>S'inscrire</source>
+        <target>S'inscrire</target>
+      </trans-unit>
+      <trans-unit id="TW_kz7j" resname="Mot de passe non valide.">
+        <source>Mot de passe non valide.</source>
+        <target>Mot de passe non valide.</target>
+      </trans-unit>
+      <trans-unit id="NGdqgWZ" resname="Liste des utilisateurs">
+        <source>Liste des utilisateurs</source>
+        <target>Liste des utilisateurs</target>
+      </trans-unit>
+      <trans-unit id="EhVukhv" resname="Id">
+        <source>Id</source>
+        <target>Id</target>
+      </trans-unit>
+      <trans-unit id="lpzL089" resname="Email">
+        <source>Email</source>
+        <target>Email</target>
+      </trans-unit>
+      <trans-unit id="f9UDoym" resname="Rôles">
+        <source>Rôles</source>
+        <target>Rôles</target>
+      </trans-unit>
+      <trans-unit id=".4BZ3Gd" resname="Actions">
+        <source>Actions</source>
+        <target>Actions</target>
+      </trans-unit>
+      <trans-unit id="u8HvTko" resname="Aucune donnée trouvé">
+        <source>Aucune donnée trouvé</source>
+        <target>Aucune donnée trouvé</target>
+      </trans-unit>
+      <trans-unit id="ch5bKau" resname="Utilisateur">
+        <source>Utilisateur</source>
+        <target>Utilisateur</target>
+      </trans-unit>
+      <trans-unit id="QDGsWmR" resname="Retourner à la liste">
+        <source>Retourner à la liste</source>
+        <target>Retourner à la liste</target>
+      </trans-unit>
+      <trans-unit id="IumSuye" resname="Editer">
+        <source>Editer</source>
+        <target>Editer</target>
+      </trans-unit>
+      <trans-unit id="wlM3BVR" resname="Roles">
+        <source>Roles</source>
+        <target>Roles</target>
+      </trans-unit>
+      <trans-unit id="9HXoz2v" resname="Mettre à jour">
+        <source>Mettre à jour</source>
+        <target>Mettre à jour</target>
+      </trans-unit>
+      <trans-unit id="fHfavh." resname="Êtes vous sûr de vouloir supprimer cet utilisateur ?">
+        <source>Êtes vous sûr de vouloir supprimer cet utilisateur ?</source>
+        <target>Êtes vous sûr de vouloir supprimer cet utilisateur ?</target>
+      </trans-unit>
+      <trans-unit id="2sgsyFE" resname="Êtes vous sûr de vouloir supprimer ce membre ?">
+        <source>Êtes vous sûr de vouloir supprimer ce membre ?</source>
+        <target>Êtes vous sûr de vouloir supprimer ce membre ?</target>
+      </trans-unit>
+      <trans-unit id="ADsY5bU" resname="Êtes vous sûr de vouloir supprier cet élément ?">
+        <source>Êtes vous sûr de vouloir supprier cet élément ?</source>
+        <target>Êtes vous sûr de vouloir supprier cet élément ?</target>
+      </trans-unit>
+      <trans-unit id="7O8XSgI" resname="Editer le groupe">
+        <source>Editer le groupe</source>
+        <target>Editer le groupe</target>
+      </trans-unit>
+      <trans-unit id="QLeNDdM" resname="Retour à la liste">
+        <source>Retour à la liste</source>
+        <target>Retour à la liste</target>
+      </trans-unit>
+      <trans-unit id="iJqs1wK" resname="Créer un groupe">
+        <source>Créer un groupe</source>
+        <target>Créer un groupe</target>
+      </trans-unit>
+      <trans-unit id="xSSk9I3" resname="Groupe">
+        <source>Groupe</source>
+        <target>Groupe</target>
+      </trans-unit>
+      <trans-unit id="3FYHXlv" resname="Le groupe">
+        <source>Le groupe</source>
+        <target>Le groupe</target>
+      </trans-unit>
+      <trans-unit id="VObznUf" resname="Le groupe est composé de { membersLength } membres qui sont :">
+        <source>Le groupe est composé de { membersLength } membres qui sont :</source>
+        <target>Le groupe est composé de { membersLength } membres qui sont :</target>
+      </trans-unit>
+      <trans-unit id="ZcDB1p8" resname="Né le">
+        <source>Né le</source>
+        <target>Né le</target>
+      </trans-unit>
+      <trans-unit id="Qk94Qmw" resname="Aucun membre pour l'instant.">
+        <source>Aucun membre pour l'instant.</source>
+        <target>Aucun membre pour l'instant.</target>
+      </trans-unit>
+      <trans-unit id="vaU8STn" resname="Les prochains concerts à venir :">
+        <source>Les prochains concerts à venir :</source>
+        <target>Les prochains concerts à venir :</target>
+      </trans-unit>
+      <trans-unit id="8llNU8l" resname="en concert le { date }">
+        <source>en concert le { date }</source>
+        <target>en concert le { date }</target>
+      </trans-unit>
+      <trans-unit id="_GiYzhC" resname="Réservez vos places maintenant, il n'y en a que { capacity } disponibles">
+        <source>Réservez vos places maintenant, il n'y en a que { capacity } disponibles</source>
+        <target>Réservez vos places maintenant, il n'y en a que { capacity } disponibles</target>
+      </trans-unit>
+      <trans-unit id="tGr0o0T" resname="Aucun concert pour l'instant.">
+        <source>Aucun concert pour l'instant.</source>
+        <target>Aucun concert pour l'instant.</target>
+      </trans-unit>
+      <trans-unit id="hd72fTY" resname="Êtes vous sûr de vouloir supprimer ce groupe ?">
+        <source>Êtes vous sûr de vouloir supprimer ce groupe ?</source>
+        <target>Êtes vous sûr de vouloir supprimer ce groupe ?</target>
+      </trans-unit>
+      <trans-unit id="Xl0CFs4" resname="Supprimer">
+        <source>Supprimer</source>
+        <target>Supprimer</target>
+      </trans-unit>
+      <trans-unit id="pUiESkd" resname="Modifier un concert">
+        <source>Modifier un concert</source>
+        <target>Modifier un concert</target>
+      </trans-unit>
+      <trans-unit id="CkWwaGZ" resname="Nouveau concert">
+        <source>Nouveau concert</source>
+        <target>Nouveau concert</target>
+      </trans-unit>
+      <trans-unit id="WcnIqxb" resname="Créer un nouveau concert">
+        <source>Créer un nouveau concert</source>
+        <target>Créer un nouveau concert</target>
+      </trans-unit>
+      <trans-unit id="0dp4VXL" resname="Concert">
+        <source>Concert</source>
+        <target>Concert</target>
+      </trans-unit>
+      <trans-unit id="IVb.L2U" resname="Infos pratiques">
+        <source>Infos pratiques</source>
+        <target>Infos pratiques</target>
+      </trans-unit>
+      <trans-unit id="hfV_rri" resname="Salle de concert">
+        <source>Salle de concert</source>
+        <target>Salle de concert</target>
+      </trans-unit>
+      <trans-unit id="JcfhfT6" resname="Hall">
+        <source>Hall</source>
+        <target>Hall</target>
+      </trans-unit>
+      <trans-unit id="nov0xcP" resname="Présentation">
+        <source>Présentation</source>
+        <target>Présentation</target>
+      </trans-unit>
+      <trans-unit id="Dr0lo0H" resname="Ville">
+        <source>Ville</source>
+        <target>Ville</target>
+      </trans-unit>
+      <trans-unit id="gCeCCZb" resname="Liste des musiciens">
+        <source>Liste des musiciens</source>
+        <target>Liste des musiciens</target>
+      </trans-unit>
+      <trans-unit id="lpQY9NW" resname="Créer">
+        <source>Créer</source>
+        <target>Créer</target>
+      </trans-unit>
+      <trans-unit id="cA7z7yE" resname="Pas de musiciens existants.">
+        <source>Pas de musiciens existants.</source>
+        <target>Pas de musiciens existants.</target>
+      </trans-unit>
+      <trans-unit id="s2pW.nP" resname="Ajouter un musicien">
+        <source>Ajouter un musicien</source>
+        <target>Ajouter un musicien</target>
+      </trans-unit>
+      <trans-unit id="AUTb.4G" resname="Groupes">
+        <source>Groupes</source>
+        <target>Groupes</target>
+      </trans-unit>
+      <trans-unit id="JjxZ90Q" resname="Musiciens">
+        <source>Musiciens</source>
+        <target>Musiciens</target>
+      </trans-unit>
+      <trans-unit id="I9OTi17" resname="Utilisateurs">
+        <source>Utilisateurs</source>
+        <target>Utilisateurs</target>
+      </trans-unit>
+      <trans-unit id="KPRXHyi" resname="Mon compte">
+        <source>Mon compte</source>
+        <target>Mon compte</target>
+      </trans-unit>
+      <trans-unit id="kXLo7sm" resname="Bonjour">
+        <source>Bonjour</source>
+        <target>Bonjour</target>
+      </trans-unit>
+      <trans-unit id="_1_eksG" resname="Déconnexion">
+        <source>Déconnexion</source>
+        <target>Déconnexion</target>
+      </trans-unit>
+      <trans-unit id="YdaVBBA" resname="Connexion">
+        <source>Connexion</source>
+        <target>Connexion</target>
+      </trans-unit>
+      <trans-unit id="7lsK5ut" resname="Liste des groupes">
+        <source>Liste des groupes</source>
+        <target>Liste des groupes</target>
+      </trans-unit>
+      <trans-unit id="fnRBQbQ" resname="Style">
+        <source>Style</source>
+        <target>Style</target>
+      </trans-unit>
+      <trans-unit id="QfUroxY" resname="Le groupe { name } créé en { yearOfCreation } est composé de { members } membres">
+        <source>Le groupe { name } créé en { yearOfCreation } est composé de { members } membres</source>
+        <target>Le groupe { name } créé en { yearOfCreation } est composé de { members } membres</target>
+      </trans-unit>
+      <trans-unit id="hpBxxF3" resname="Son dernier album est { lastAlbumName }">
+        <source>Son dernier album est { lastAlbumName }</source>
+        <target>Son dernier album est { lastAlbumName }</target>
+      </trans-unit>
+      <trans-unit id="rj2hKMD" resname="Pas de groupes existants.">
+        <source>Pas de groupes existants.</source>
+        <target>Pas de groupes existants.</target>
+      </trans-unit>
+      <trans-unit id="CuqkAam" resname="Liste concerts">
+        <source>Liste concerts</source>
+        <target>Liste concerts</target>
+      </trans-unit>
+      <trans-unit id="ovvHVLn" resname="Le">
+        <source>Le</source>
+        <target>Le</target>
+      </trans-unit>
+      <trans-unit id="qlKx9wS" resname="Membres">
+        <source>Membres</source>
+        <target>Membres</target>
+      </trans-unit>
+      <trans-unit id="GGusCVT" resname="{ name } { firstname }, né le { birthdate } est un membre du groupe">
+        <source>{ name } { firstname }, né le { birthdate } est un membre du groupe</source>
+        <target>{ name } { firstname }, né le { birthdate } est un membre du groupe</target>
+      </trans-unit>
+      <trans-unit id="rs.CIoz" resname="dans lequel il tient le rôle de">
+        <source>dans lequel il tient le rôle de</source>
+        <target>dans lequel il tient le rôle de</target>
+      </trans-unit>
+      <trans-unit id="sC70ucz" resname="Vous êtes connecté en tant que { username }">
+        <source>Vous êtes connecté en tant que { username }</source>
+        <target>Vous êtes connecté en tant que { username }</target>
+      </trans-unit>
+      <trans-unit id="SKI4MPT" resname="Connectez vous">
+        <source>Connectez vous</source>
+        <target>Connectez vous</target>
+      </trans-unit>
+      <trans-unit id="q_5IDI1" resname="Emai">
+        <source>Emai</source>
+        <target>Email</target>
+      </trans-unit>
+      <trans-unit id="E1hrzwa" resname="Editer utilisateur">
+        <source>Editer utilisateur</source>
+        <target>Editer utilisateur</target>
+      </trans-unit>
+      <trans-unit id="tZj8iyM" resname="Editer membre">
+        <source>Editer membre</source>
+        <target>Editer membre</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

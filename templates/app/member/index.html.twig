@@ -1,19 +1,19 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Liste des musiciens{% endblock %}
+{% block title %}{% trans %}Liste des musiciens{% endtrans %}{% endblock %}
 
 {% block body %}
 
 
     <div class="row">
         <div class="col-6">
-            <h1>Liste des musiciens</h1>
+            <h1>{% trans %}Liste des musiciens{% endtrans %}</h1>
 
         </div>
 
         <div class="col-6 text-right">
             {% if is_granted('ROLE_ADMIN') %}
-                <a href="{{ path('member_new') }}" class="btn btn-primary text-white">Créer</a>
+                <a href="{{ path('member_new') }}" class="btn btn-primary text-white">{% trans %}Créer{% endtrans %}</a>
             {% endif %}
         </div>
     </div>
@@ -28,7 +28,7 @@
                     <img src="{{ asset(member.picturePath) }}" class="card-img-top" alt="Photo membre">
                     <div class="card-body">
                         <h5 class="card-title"><a href="{{ path('member_show', {'id': member.id}) }}"> {{ member.name }} {{ member.firstName }}</a></h5>
-                        <p class="card-text">Né le {{ member.birthDate |date('d-m-Y') }}</p>
+                        <p class="card-text">{% trans %}Né le{% endtrans %} {{ member.birthDate |date('d-m-Y') }}</p>
                     </div>
                     <div class="card-footer">
                         {{ member.job }}
@@ -41,7 +41,7 @@
 
             <div class="card">
                 <div class="card-body">
-                    Pas de musiciens existants.
+                    {% trans %}Pas de musiciens existants.{% endtrans %}
                 </div>
             </div>
 

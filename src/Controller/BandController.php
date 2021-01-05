@@ -77,7 +77,8 @@ class BandController extends AbstractController
     public function show($id, BandRepository $bandRepository): Response
     {
         $band = $bandRepository->findOneWithFutureShowsOnly($id);
-
+//dd($id);
+//dd($band);
         return $this->render('app/band/show.html.twig', [
             'band' => $band,
         ]);

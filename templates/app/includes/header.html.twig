@@ -7,11 +7,8 @@
     <div class="collapse navbar-collapse" id="navbarsExample04">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item {{ page is defined and page == "groupe" ? "active" : "" }}">
-                <a class="nav-link" href="{{ path("band_index") }}">Groupes</a>
+                <a class="nav-link" href="{{ path("band_index") }}">{% trans %}Groupes{% endtrans %}</a>
             </li>
-{#            <li class="nav-item  {{ page is defined and page == "concert" ? "active" : "" }}">#}
-{#                <a class="nav-link" href="{{ path("concert_index") }}">Concerts</a>#}
-{#            </li>#}
 
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -26,40 +23,58 @@
 
 
             <li class="nav-item {{ page is defined and page == "member" ? "active" : "" }}">
-                <a class="nav-link" href="{{ path("member_index") }}">Musiciens</a>
+                <a class="nav-link" href="{{ path("member_index") }}">{% trans %}Musiciens{% endtrans %}</a>
             </li>
 
             {% if is_granted('ROLE_ADMIN') %}
                 <li class="nav-item {{ page is defined and page == "user" ? "active" : "" }}">
-                    <a class="nav-link" href="{{ path("user_index") }}">Utilisateurs</a>
+                    <a class="nav-link" href="{{ path("user_index") }}">{% trans %}Utilisateurs{% endtrans %}</a>
                 </li>
             {% endif %}
 
             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ path("user_show", {'id': app.user.id}) }}">Mon compte</a>
+                    <a class="nav-link" href="{{ path("user_show", {'id': app.user.id}) }}">{% trans %}Mon compte{% endtrans %}</a>
                 </li>
             {% endif %}
 
 
         </ul>
         <ul class="my-2 my-md-0 navbar-nav">
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{ app.request.locale }}
+                </a>
+                <div class="dropdown-menu" aria-labelledby="languageDropdown">
+                    {% for locale in locales %}
+                        {% if locale != app.request.locale %}
+                            <a class="dropdown-item" href="{{ path('change_locale', {'locale': locale}) }}">{{ locale }}</a>
+                        {% endif %}
+                    {% endfor %}
+
+                </div>
+            </li>
+
+
             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                 <li class="nav-item">
-                    <span class="navbar-text text-white">Bonjour {{ app.user.firstName }}</span>
+                    <span class="navbar-text text-white">{% trans %}Bonjour{% endtrans %} {{ app.user.firstName }}</span>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ path("app_logout") }}"><span class="material-icons">exit_to_app</span> Déconnexion</a>
+                    <a class="nav-link" href="{{ path("app_logout") }}"><span class="material-icons">exit_to_app</span> {% trans %}Déconnexion{% endtrans %}</a>
                 </li>
             {% else %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ path('app_register') }}"><span class="material-icons">perm_identity</span> Inscription</a>
+                    <a class="nav-link" href="{{ path('app_register') }}"><span class="material-icons">perm_identity</span> {% trans %}Inscription{% endtrans %}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ path("app_login") }}"><span class="material-icons">login</span> Connexion</a>
+                    <a class="nav-link" href="{{ path("app_login") }}"><span class="material-icons">login</span> {% trans %}Connexion{% endtrans %}</a>
                 </li>
 
             {% endif %}
+
+
         </ul>
     </div>
 </nav>
