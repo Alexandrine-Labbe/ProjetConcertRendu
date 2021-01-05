@@ -22,3 +22,15 @@ Importation des fixtures :
 php bin/console doctrine:fixtures:load
 ```
 
+## Identifiants
+
+Admin :
+```
+admin1@exemple.com
+password
+```
+User : 
+```
+user1@exemple.com
+password
+```

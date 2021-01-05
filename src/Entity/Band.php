@@ -41,7 +41,7 @@ class Band
     private $lastAlbumName;
 
     /**
-     * @ORM\OneToMany(targetEntity=Concert::class, mappedBy="band", fetch="EAGER")
+     * @ORM\OneToMany(targetEntity=Concert::class, mappedBy="band", fetch="EAGER", cascade={"remove"})
      * @OrderBy({"date" = "DESC"})
      */
     private $shows;
