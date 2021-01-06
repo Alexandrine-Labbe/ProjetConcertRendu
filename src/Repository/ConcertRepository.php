@@ -36,6 +36,24 @@ class ConcertRepository extends ServiceEntityRepository
     }
 
     /**
+     * @return Concert[] Returns an array of Concert objects
+     */
+    public function findByBandAfterDate($band_id, $date)
+    {
+
+        return $this->createQueryBuilder('concert')
+            ->join('concert.band', 'band')
+            ->where('band.id = :id')
+            ->andWhere('concert.date >= :date')
+            ->setParameter('date', $date)
+            ->setParameter('id', $band_id)
+            ->orderBy('concert.date', 'ASC')
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
+    /**
      * @param $year
      * @return Concert[] Returns an array of Concert objects
      */

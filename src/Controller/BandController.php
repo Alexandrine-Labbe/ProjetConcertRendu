@@ -5,7 +5,9 @@ namespace App\Controller;
 use App\Entity\Band;
 use App\Form\BandType;
 use App\Repository\BandRepository;
+use App\Repository\ConcertRepository;
 use App\Service\FileUploader;
+use DateTime;
 use Doctrine\ORM\NonUniqueResultException;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -69,18 +71,17 @@ class BandController extends AbstractController
 
     /**
      * @Route("/{id}", name="band_show", methods={"GET"})
-     * @param $id
-     * @param BandRepository $bandRepository
+     * @param Band $band
+     * @param ConcertRepository $concertRepository
      * @return Response
-     * @throws NonUniqueResultException
      */
-    public function show($id, BandRepository $bandRepository): Response
+    public function show(Band $band, ConcertRepository $concertRepository): Response
     {
-        $band = $bandRepository->findOneWithFutureShowsOnly($id);
-//dd($id);
-//dd($band);
+        $future_concert = $concertRepository->findByBandAfterDate($band->getId(), new DateTime());
+
         return $this->render('app/band/show.html.twig', [
             'band' => $band,
+            'future_concert' => $future_concert,
         ]);
     }
 

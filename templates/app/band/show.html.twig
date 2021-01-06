@@ -53,7 +53,7 @@
 
     <div class="row">
 
-        {% for concert in band.shows %}
+        {% for concert in future_concert %}
             <div class="col-sm-3 mb-3">
                 <a class="text-black-50" href="{{ path("concert_show", {'id': concert.id}) }}">
 
@@ -70,7 +70,7 @@
                             </p>
                             <p class="card-text btn btn-secondary btn-block">{{ concert.hall.name }}</p>
                         </div>
-                        <div class="card-body text-uppercase text-center">{% trans %}En savoir plus{% endtrans %}</div>
+                        <div class="card-bTOody text-uppercase text-center">{% trans %}En savoir plus{% endtrans %}</div>
                     </div>
                 </a>
             </div>

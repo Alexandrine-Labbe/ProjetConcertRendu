@@ -39,22 +39,4 @@ class BandRepository extends ServiceEntityRepository
     */
 
 
-    /**
-     * @param $id
-     * @return Band|null
-     * @throws NonUniqueResultException
-     */
-    public function findOneWithFutureShowsOnly($id): ?Band
-    {
-        return $this->createQueryBuilder('band')
-            ->join('band.shows', 'concert')
-            ->Where('band.id = :id')
-            ->andWhere('concert.date > :now')
-            ->setParameter('id', $id)
-            ->setParameter('now', new DateTime())
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-
 }
